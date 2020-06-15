@@ -1,0 +1,87 @@
+<div class="card border shadow" *ngIf="feature">
+    <div class="card-header card-text">
+        <div class="d-flex">
+            <img width="50px" height="50px" src="assets/img/logooplaadpunt.png">
+            <div class="col-2">
+                <div class="row">
+                    ID:<br>
+                    Straatnaam:<br>
+                    Huisnummer:<br>
+                    Postcode:<br>
+                    Regio:<br>
+                    Type aansluiting:<br>
+                    GISID:<br>
+                    Aantal:<br>
+                    Parking:<br>
+                    Toegang:<br>
+                    Laadpaal/Wallbox:<br>
+                    Vermogen:<br>
+                    Parkeertarief:<br>
+                    Betaalsysteem:<br>
+                    Prijs:<br>
+                    Starttarief:<br>
+                    Rotatietarief:<br>
+                </div>
+                <div class="row mt-2">
+                    <div class="font-weight-bold">Coördinaten</div><br>
+                    x:<br>
+                    y:<br>
+                </div>
+                <div class="row mt-3">
+                    <a routerLink="/list/{{feature.attributes.District}}">Terug naar overzicht</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    {{feature.attributes.OBJECTID}}<br>
+                    {{feature.attributes.Straatnaam}}<br>
+                    {{feature.attributes.Huisnummer}}<br>
+                    {{feature.attributes.Postcode}}<br>
+                    {{feature.attributes.District}}<br>
+                    {{feature.attributes.Type}}<br>
+                    {{feature.attributes.GISID}}<br>
+                    {{feature.attributes.AANTAL}}<br>
+                    {{feature.attributes.PARKING}}<br>
+                    {{feature.attributes.Toegang}}<br>
+                    {{feature.attributes.Laadpaal_wallbox}}<br>
+                    {{feature.attributes.Vermogen_kW}}Kw<br>
+                    {{feature.attributes.Parkeertarief}}<br>
+                    {{feature.attributes.Betaalsysteem}}<br>
+                    {{feature.attributes.Prijs}}<br>
+                    {{feature.attributes.Starttarief}}<br>
+                    {{feature.attributes.Rotatietarief}}<br>
+                </div>
+                <div class="row mt-2">
+                    <br>
+                    {{feature.geometry.x}}<br>
+                    {{feature.geometry.y}}<br>
+                </div>
+                <div class="row mt-2">
+                    <button class="btn btn-primary" (click)="initMap()">Toon kaart</button>
+                    <button class="btn btn-primary ml-1" (click)="calcRoute()">Bereken route</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <div id="map" style="float:left;width:500px;height:500px"></div>
+            </div>
+            
+                <!-- <div class="col-6">
+                    <google-map [center]="center" [options]="options">
+                        <map-marker #marker [position]="center" (mapClick)="openInfoWindow(marker)"></map-marker>
+                        <map-info-window>
+                            {{feature.attributes.Straatnaam}} {{feature.attributes.Huisnummer}}<br>
+                            {{feature.attributes.Postcode}} {{feature.attributes.District}}
+                        </map-info-window>
+                    </google-map>
+                </div> -->
+            
+            <div class="col-6">
+                <div id="directionsPanel" style="float:right;width:100%;height:100%"></div>
+            </div>
+        </div>
+    </div>
+</div>

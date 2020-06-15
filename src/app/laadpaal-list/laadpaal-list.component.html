@@ -1,0 +1,11 @@
+<div *ngFor="let lp of features">
+    <div class="card border shadow" routerLink="/detail/{{lp.attributes.OBJECTID}}">
+        <div class="card-header card-text">
+            <div class="d-flex">
+                <img width="50px" height="50px" src="assets/img/logooplaadpunt.png">
+                Regio: {{lp.attributes.District}}<br>
+                Adres: {{lp.attributes.Straatnaam}} {{lp.attributes.Huisnummer}}, {{lp.attributes.Postcode}} {{lp.attributes.District}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container body-content app-container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-1">
+        <div class="navbar-brand">
+            <img src="assets/img/logooplaadpunt.png"> {{appTitle}}
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinks"
+            aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Regio's
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" *ngFor="let regio of regios" routerLink="/list/{{regio}}" >{{regio}}</a><br>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+</div>

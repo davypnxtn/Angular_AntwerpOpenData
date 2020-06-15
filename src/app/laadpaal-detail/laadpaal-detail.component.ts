@@ -16,7 +16,6 @@ export class LaadpaalDetailComponent implements OnInit {
   public id: number;
   public feature: IFeatures;
   public errorMsg: string;
-  public showRoute: boolean = false;
   
   public map: google.maps.Map<Element>; 
   public startLocation: google.maps.LatLngLiteral;
@@ -62,7 +61,6 @@ export class LaadpaalDetailComponent implements OnInit {
   // --------------------experimental----------------------
   initMap() {
 
-    this.showRoute = true;
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: this.center,
       zoom: 17,
@@ -104,7 +102,6 @@ export class LaadpaalDetailComponent implements OnInit {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        this.showRoute = true;
         resolve({});
       }, (error: any) => {
         this.errorMsg = error

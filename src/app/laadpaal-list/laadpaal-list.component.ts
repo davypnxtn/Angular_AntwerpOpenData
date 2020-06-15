@@ -34,7 +34,7 @@ export class LaadpaalListComponent implements OnInit {
 
   }
 
-  fetchData() {
+  async fetchData() {
 
     return new Promise((resolve, reject) => {
       this.route.paramMap.subscribe((params: ParamMap) => {
